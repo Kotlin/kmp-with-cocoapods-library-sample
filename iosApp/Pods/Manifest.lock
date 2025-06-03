@@ -1,0 +1,29 @@
+PODS:
+  - AppleLibrary (0.1.0):
+    - SwiftyJSON (~> 4.0)
+  - kotlin_library (1.0-SNAPSHOT):
+    - AppleLibrary (= 0.1.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - AppleLibrary (from `../AppleLibrary`)
+  - kotlin_library (from `../kotlin-library`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  AppleLibrary:
+    :path: "../AppleLibrary"
+  kotlin_library:
+    :path: "../kotlin-library"
+
+SPEC CHECKSUMS:
+  AppleLibrary: 85cad1616426a51b05f67d3eb0fc05fba6d6e688
+  kotlin_library: 616781cbbd030ca9ffbe39d70b10f8f764503563
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: caf3cfb7315b5b046c6df5f93e7215b1347a6437
+
+COCOAPODS: 1.16.2
