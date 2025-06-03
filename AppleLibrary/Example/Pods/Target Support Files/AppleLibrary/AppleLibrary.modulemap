@@ -1,0 +1,6 @@
+framework module AppleLibrary {
+  umbrella header "AppleLibrary-umbrella.h"
+
+  export *
+  module * { export * }
+}

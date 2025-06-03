@@ -1,0 +1,23 @@
+PODS:
+  - AppleLibrary (0.1.0):
+    - SwiftyJSON (~> 4.0)
+  - SwiftyJSON (4.3.0)
+
+DEPENDENCIES:
+  - AppleLibrary (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  AppleLibrary:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AppleLibrary: 8b971fc29b8c59b260d431152a08e02f59112204
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+
+PODFILE CHECKSUM: b09e30e528c9b9ae2d29b7c2798f01a3522d0bfd
+
+COCOAPODS: 1.16.2

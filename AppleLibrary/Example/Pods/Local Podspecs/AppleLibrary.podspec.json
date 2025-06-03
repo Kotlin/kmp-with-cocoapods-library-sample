@@ -1,0 +1,29 @@
+{
+  "name": "AppleLibrary",
+  "version": "0.1.0",
+  "summary": "A short description of AppleLibrary.",
+  "description": "Add long description of the pod here",
+  "homepage": "https://github.com/ayastrebov/AppleLibrary",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "ayastrebov": "andrey.yastrebov@jetbrains.com"
+  },
+  "source": {
+    "git": "https://github.com/ayastrebov/AppleLibrary.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "16.0"
+  },
+  "swift_versions": "6.0",
+  "source_files": "AppleLibrary/Classes/**/*",
+  "dependencies": {
+    "SwiftyJSON": [
+      "~> 4.0"
+    ]
+  },
+  "swift_version": "6.0"
+}
