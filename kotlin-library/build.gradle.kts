@@ -1,34 +1,31 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
-    alias(libs.plugins.kotlinCocoapods)
 }
 
 group = "org.jetbrains.kotlin.library.sample"
 version = "1.0-SNAPSHOT"
 
 kotlin {
-    iosArm64()
-    iosSimulatorArm64()
-
-    cocoapods {
-        summary = "Kotlin sample project with CocoaPods dependencies"
-        homepage = "https://github.com/Kotlin/kotlin-with-cocoapods-library-sample"
-
-        ios.deploymentTarget = "16.0"
-        podfile = project.file("../iosApp/Podfile")
-
-        /**
-         * Example of usage local Swift CocoaPods library.
-         */
-        pod("AppleLibrary") {
-            version = "0.1.0"
-            source = path(project.file("../AppleLibrary"))
-        }
-
-        framework {
+    listOf(iosArm64(), iosSimulatorArm64()).forEach { iosTarget ->
+        iosTarget.binaries.framework {
             baseName = "KotlinLibrary"
             isStatic = true
         }
+    }
+
+    swiftPMDependencies {
+        iosMinimumDeploymentTarget = "16.0"
+
+        val appleLibraryDir = layout.projectDirectory.dir("../AppleLibrary")
+        localSwiftPackage(
+            directory = appleLibraryDir,
+            products = listOf("AppleLibrary"),
+        )
+
+        // Specify the Xcode project path for integration tasks
+        xcodeProjectPathForKmpIJPlugin.set(
+            layout.projectDirectory.file("../iosApp/iosApp.xcodeproj")
+        )
     }
 
     sourceSets {
@@ -39,3 +36,4 @@ kotlin {
         }
     }
 }
+

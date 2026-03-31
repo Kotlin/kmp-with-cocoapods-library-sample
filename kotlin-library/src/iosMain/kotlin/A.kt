@@ -1,4 +1,4 @@
-import cocoapods.AppleLibrary.*
+import swiftPMImport.org.jetbrains.kotlin.library.sample.kotlin.library.AppleLibrary
 
 @Suppress("unused")
 fun parseJson(): String {
