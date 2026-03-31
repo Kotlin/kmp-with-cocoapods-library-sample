@@ -28,8 +28,6 @@ Platform | Build Status
 6. [Work with Moya](#work-with-moya)
 7. [SwiftyJSON Model Generator](#swiftyjson-model-generator)
 
-> [中文介绍](http://tangplin.github.io/swiftyjson/)
-
 
 ## Why is the typical JSON handling in Swift NOT good?
 
@@ -63,7 +61,7 @@ An unreadable mess--for something that should really be simple!
 With SwiftyJSON all you have to do is:
 
 ```swift
-let json = JSON(data: dataFromNetworking)
+let json = try? JSON(data: dataFromNetworking)
 if let userName = json[0]["user"]["name"].string {
   //Now you got your value
 }
@@ -72,7 +70,7 @@ if let userName = json[0]["user"]["name"].string {
 And don't worry about the Optional Wrapping thing. It's done for you automatically.
 
 ```swift
-let json = JSON(data: dataFromNetworking)
+let json = try? JSON(data: dataFromNetworking)
 let result = json[999999]["wrong_key"]["wrong_name"]
 if let userName = result.string {
     //Calm down, take it easy, the ".string" property still produces the correct Optional String type with safety
@@ -145,7 +143,7 @@ import SwiftyJSON
 ```
 
 ```swift
-let json = JSON(data: dataFromNetworking)
+let json = try? JSON(data: dataFromNetworking)
 ```
 Or
 
@@ -398,7 +396,7 @@ let json: JSON = "I'm a json"
 ```
 
 ```swift
-/ /IntegerLiteralConvertible
+// IntegerLiteralConvertible
 let json: JSON =  12345
 ```
 
@@ -466,7 +464,7 @@ If both JSONs contain a value for the same key, _mostly_ this value gets overwri
 - In case of both values being a `JSON.Type.array` the values form the array found in the `other` JSON getting appended to the original JSON's array value.
 - In case of both values being a `JSON.Type.dictionary` both JSON-values are getting merged the same way the encapsulating JSON is merged.
 
-In case, where two fields in a JSON have a different types, the value will get always overwritten.
+In a case where two fields in a JSON have different types, the value will get always overwritten.
 
 There are two different fashions for merging: `merge` modifies the original JSON, whereas `merged` works non-destructively on a copy.
 

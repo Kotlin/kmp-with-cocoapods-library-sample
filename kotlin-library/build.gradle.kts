@@ -23,7 +23,6 @@ kotlin {
         pod("AppleLibrary") {
             version = "0.1.0"
             source = path(project.file("../AppleLibrary"))
-            extraOpts += listOf("-compiler-option", "-fmodules")
         }
 
         framework {

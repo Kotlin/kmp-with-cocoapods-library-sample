@@ -22,7 +22,7 @@
   "source_files": "AppleLibrary/Classes/**/*",
   "dependencies": {
     "SwiftyJSON": [
-      "~> 4.0"
+      "~> 5.0"
     ]
   },
   "swift_version": "6.0"
